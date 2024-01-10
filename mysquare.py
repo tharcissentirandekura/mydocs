@@ -3,27 +3,27 @@
 from samplebase import SampleBase
 
 class SimpleSquare(SampleBase):
+    red = 30
+    green = 250
+    blue = 200
     def __init__(self, *args, **kwargs):
         super(SimpleSquare, self).__init__(*args, **kwargs)
 
     def run(self):
+        r = (self.red + self.green + self.blue) // 2
+        b  = (self.red + self.green + self.blue) // 2
+        g = (self.red + self.green + self.blue) // 2
         offset_canvas = self.matrix.CreateFrameCanvas()
+
         while True:
-            for x in range(0, self.matrix.width):
-                for k in range(20):
-                    offset_canvas.SetPixel(x * 30, 10 * k * 4, 255, 255, 255)
-                for h in range(20):
-                    offset_canvas.SetPixel(10 * h * 4, x * 30, 255, 0, 255)
+            for x in range(1, 600):
+                for k in range(500):
+                    offset_canvas.SetPixel(x * 30, 10 * k * 4, r, g, b)
+                for h in range(500):
+                    offset_canvas.SetPixel(10 * h * 4, x * 30, r, g, b)
 
-            for x in range(0, offset_canvas.width):
-                for i in range(20):
-                    offset_canvas.SetPixel(x * 37, 10 * (i * 4), 255, 0, 0)
-                for j in range(20):
-                    offset_canvas.SetPixel(10 * (j * 4),x * 37, 255, 255, 0)
-
-            # for y in range(0, offset_canvas.height):
-            #     offset_canvas.SetPixel(0, y, 0, 0, 255)
-            #     offset_canvas.SetPixel(offset_canvas.width - 1, y, 0, 255, 0)
+            self.green = (self.green + 20) % 255
+            self.red = (self.red - 20) % 250
             offset_canvas = self.matrix.SwapOnVSync(offset_canvas)
 
 
