@@ -14,7 +14,11 @@ class SimpleSquare(SampleBase):
         self.blue = 200
         offset_canvas = self.matrix.CreateFrameCanvas()
 
+        
+
         while True:
+            offset_canvas.SetPixel(self.matrix.width,self.matrix.height,0,0,0)
+            offset_canvas = self.matrix.SwapOnVSync(offset_canvas)
             for x in range(0, self.matrix.width):
                 for k in range(0,self.matrix.width):
                     
@@ -31,7 +35,7 @@ class SimpleSquare(SampleBase):
                     self.green = (self.green + 20) % 200
 
 
-                    offset_canvas = self.matrix.SwapOnVSync(offset_canvas)
+                    #offset_canvas = self.matrix.SwapOnVSync(offset_canvas)
                 self.blue = (self.blue - 20) % 20
                 self.green = (self.green + 20) % 20
 
