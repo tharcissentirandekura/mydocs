@@ -19,12 +19,10 @@ class SimpleSquare(SampleBase):
             for x in range(1, 600):
                 for k in range(500):
                     offset_canvas.SetPixel(x * 30, 10 * k * 4, r, g, b)
-                for h in range(500):
-                    offset_canvas.SetPixel(10 * h * 4, x * 30, r, g, b)
 
-            self.green = (self.green + 20) % 255
-            self.red = (self.red - 20) % 250
-            offset_canvas = self.matrix.SwapOnVSync(offset_canvas)
+                self.green = (self.green + 20) % 255
+                self.red = (self.red - 20) % 250
+                offset_canvas = self.matrix.SwapOnVSync(offset_canvas)
 
 
 # Main function
