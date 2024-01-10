@@ -10,8 +10,10 @@ class SimpleSquare(SampleBase):
         offset_canvas = self.matrix.CreateFrameCanvas()
         while True:
             for x in range(0, self.matrix.width):
-                offset_canvas.SetPixel(x, x, 255, 255, 255)
-                offset_canvas.SetPixel(offset_canvas.height - 1 - x, x, 255, 0, 255)
+                for k in range(20):
+                    offset_canvas.SetPixel(x * 30, 10 * k * 4, 255, 255, 255)
+                for h in range(20):
+                    offset_canvas.SetPixel(10 * h * 4, x * 30, 255, 0, 255)
 
             for x in range(0, offset_canvas.width):
                 for i in range(20):
