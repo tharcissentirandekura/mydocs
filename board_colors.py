@@ -14,15 +14,10 @@ class MUltiSquare(SampleBase):
         self.blue = 20
         canvas = self.matrix.CreateFrameCanvas()  
         
-        
-        
         while True:
-           
             for x in range(-1,self.matrix.width):
-                #canvas =  self.matrix.SwapOnVSync(canvas) running one color at a time and change for each iteration
                 for y in range(-1,self.matrix.height):
                     canvas.SetPixel((self.matrix.width //20) * x,(self.matrix.height // 20) * y,self.red,self.green,self.blue)
-                canvas.Fill(20,70,70)
                 canvas =  self.matrix.SwapOnVSync(canvas)
             time.sleep(2)
             print((self.red,self.green,self.blue))
