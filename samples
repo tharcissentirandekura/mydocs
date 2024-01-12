@@ -12,14 +12,14 @@ class Graphing(SampleBase):
     def run(self):
         canvas = self.matrix
         font = graphics.Font()
-        font.LoadFont("../../../fonts/7x13.bdf"s)
+        font.LoadFont("../../../fonts/7x13.bdf")
 
 
         red = graphics.Color(255,0,0)
         graphics.DrawLine(canvas,10,10,22,13,red)
 
         green = graphics.Color(0, 255, 0)
-        graphics.DrawCircle(canvas, seld.matrx.width//20, self.matrix.height, 1, green)
+        graphics.DrawCircle(canvas, 15, 15, 10, green)
 
         blue = graphics.Color(0, 0, 255)
         graphics.DrawText(canvas, font, 2, 10, blue, "Tharcisse")
