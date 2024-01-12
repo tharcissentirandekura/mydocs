@@ -16,8 +16,8 @@ class MultiSquare:
         for x in range(-1,int(sys.argv[1]) * 2):
             for y in range(-1,int(sys.argv[1]) * 2):
 
-                picture.draw_filled_rectangle((width //int(sys.argv[1])) * x,(height // int(sys.argv[1])) * y,width//3,height//3)
-                print("Coordinates are :", (width //int(sys.argv[1])) * x)
+                picture.draw_filled_rectangle((self.width //int(sys.argv[1])) * x,(self.height // int(sys.argv[1])) * y,width//3,height//3)
+                print("Coordinates are :", (self.width //int(sys.argv[1])) * x)
 
 
             picture.set_fill_color(red,green,blue)
