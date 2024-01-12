@@ -18,7 +18,7 @@ class MUltiSquare(SampleBase):
 
             self.green = (self.green + 20) % 255
             self.red = (self.red - 20) % 250
-            canvas = offset_canvas = self.matrix.SwapOnVSync(offset_canvas)
+            canvas =  self.matrix.SwapOnVSync(canvas)
 
 
 if __name__ == "__main__":
