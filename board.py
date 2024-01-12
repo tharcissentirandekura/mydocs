@@ -12,13 +12,14 @@ class MUltiSquare(SampleBase):
         self.green = 10
         self.blue = 200
         canvas = self.matrix.CreateFrameCanvas()  
-        for x in range(-1,self.matrix.width):
-            for y in range(-1,self.matrix.height):
-                canvas.SetPixel((self.matrix.width //8) * x,(self.matrix.height // 8) * y,self.red,self.green,self.blue)
+        while True:
+            for x in range(-1,self.matrix.width):
+                for y in range(-1,self.matrix.height):
+                    canvas.SetPixel((self.matrix.width //8) * x,(self.matrix.height // 8) * y,self.red,self.green,self.blue)
 
-            self.green = (self.green + 20) % 255
-            self.red = (self.red - 20) % 250
-            canvas =  self.matrix.SwapOnVSync(canvas)
+                self.green = (self.green + 20) % 255
+                self.red = (self.red - 20) % 250
+                canvas =  self.matrix.SwapOnVSync(canvas)
 
 
 if __name__ == "__main__":
