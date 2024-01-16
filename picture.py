@@ -149,6 +149,7 @@ CANVAS = None
 IMAGE = None
 DRAW = None
 TK_IMAGE = None
+MATRIX = None
 
 OUTLINE_COLOR = parse_color("black")
 FILL_COLOR = parse_color("white")
@@ -167,7 +168,13 @@ def new_picture(width, height):
     picture.new_picture(800, 600) #Creates a blank 800x600 picture
     ```
     """
-    global ROOT, FRAME, CANVAS, IMAGE, DRAW
+    global ROOT, FRAME, CANVAS, IMAGE, DRAW, MATRIX
+    
+    options = RGBMatrixOptions() #update 
+    options.rows = 64
+    options.chain_length = 1
+    options.parallel = 1
+    options.hardware_mapping = 'adafruit-hat'
 
     if ROOT is None:
         ROOT = tkinter.Tk()
@@ -184,6 +191,12 @@ def new_picture(width, height):
         change_picture_size(width, height)
     IMAGE = Image.new("RGB", (width, height), color=(255, 255, 255))
     DRAW = ImageDraw.Draw(IMAGE)
+    
+    MATRIX = RGBMatrix(options = options)
+
+def draw_on_matrix():
+    global MATRIX
+    MATRIX.SetImage(IMAGE,0,0)
 
 
 def save_picture(path):
