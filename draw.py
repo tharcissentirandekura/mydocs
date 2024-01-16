@@ -30,7 +30,7 @@ class Draw:
 if __name__ == "__main__":
 	draw = Draw(int(sys.argv[1]),int(sys.argv[1]))
 	draw.back_ground_color("green")
-	draw.text("red","Tharcisse",10)
-	#draw.shape("orange")
+	#draw.text("red","Tharcisse",10)
+	draw.shape("orange")
 	picture.draw_on_matrix()
 
