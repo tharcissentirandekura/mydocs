@@ -58,7 +58,6 @@ import time
 
 from PIL import Image, ImageColor, ImageDraw, ImageFont, ImageTk
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
-from samplebase import SampleBase
 
 __all__ = [
     "blank_image",

@@ -1,6 +1,5 @@
 import picture
 import sys
-import argparse
 
 class Draw:
 	def __init__(self,width,height):
@@ -17,7 +16,7 @@ class Draw:
 	def shape(self,color):
 		self.color = color
 		picture.set_fill_color(self.color)
-		picture.draw_filled_rectangle(0,0,self.width//3,self.height//2)
+		picture.draw_filled_rectangle(0,0,self.width//2,self.height//3)
 		
 	def text(self,color,text,fontsize):
 		self.text = text
