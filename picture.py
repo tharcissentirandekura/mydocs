@@ -198,7 +198,6 @@ def new_picture(width, height):
     matrix = RGBMatrix(options = options)
     
     
-
 def draw_on_matrix():
     while True:
         matrix.SetImage(IMAGE,0,0)
