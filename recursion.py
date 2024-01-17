@@ -10,8 +10,6 @@ def recursive(width):
     # for i in range(width):
     picture.draw_filled_rectangle(width,width//2,width,width)
 
-
-
 if __name__ == "__main__":  
     picture.new_picture(400,400)
     picture.set_fill_color("black")
