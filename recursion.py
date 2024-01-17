@@ -19,3 +19,6 @@ if __name__ == "__main__":
 # picture.save_picture("recursive.png")
 picture.draw_on_matrix()
 
+
+
+picture.set_pen_width()
