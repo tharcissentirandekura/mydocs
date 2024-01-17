@@ -9,6 +9,7 @@ class DrawSquare:
     picture.set_pen_width(4)
     
     def __init__(self,width,height):
+        
         self.width = width
         self.height = height
 
