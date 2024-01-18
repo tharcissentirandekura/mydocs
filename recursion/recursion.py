@@ -14,9 +14,5 @@ if __name__ == "__main__":
     picture.new_picture(400,400)
     picture.set_fill_color("black")
     picture.draw_filled_rectangle(0,0,400,400)
-# picture.save_picture("recursive.png")
-picture.draw_on_matrix()
-
-
-
-picture.set_pen_width()
+picture.save_picture("recursive.png")
+# picture.draw_on_matrix()
