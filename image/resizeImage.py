@@ -9,14 +9,20 @@ class Resize:
 
         width = picture.image_width(self.image)
         height = picture.image_height(self.image)
+        
 
         imageCopy = picture.blank_image(width,height)
 
         for x in range(width):
             for y in range(height):
-                red,green,blue = picture.get_pixel(image,x,y)
+                red,green,blue = picture.get_pixel(self.image,x,y)
 
                 picture.set_pixel(imageCopy,x,y,(red,green,blue))
+    
+                red = picture.get_red(self.image, x ,y)
+                green = picture.get_green(self.image,x,y)
+                blue = picture.get_blue(self.image,x,y)
+                picture.set_pixel(imageCopy,x,y,red,green,blue//2)
 
         return imageCopy
 
@@ -24,15 +30,14 @@ class Resize:
 if __name__ == "__main__":
     
     image = picture.load_image("image.png")
-    width = picture.image_width(image)
-    height = picture.image_height(image)
-    picture.new_picture(width,height)
-
     resize = Resize(image)
     copied = resize.copy()
+    width = picture.image_width(image)
+    height = picture.image_height(image)
 
-    picture.draw_image(0,0,copied)
-    #picture.display()
-    picture.draw_on_matrix()
-    
-    #picture.save_picture("copy.png")
+    picture.new_picture(width,height)
+
+
+
+    picture.draw_image(0,0,copied)  
+    picture.save_picture("copy.png")

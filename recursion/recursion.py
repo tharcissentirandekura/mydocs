@@ -1,5 +1,6 @@
 import picture
 import sys
+from time import sleep
 # from recursion import recursive
 
 class MultiSquare:
@@ -12,33 +13,29 @@ class MultiSquare:
         green = 250
         blue = 200
 
-        picture.set_fill_color("green")
+        color = "white"
+
+        picture.set_fill_color(color)
         for x in range(-1,int(sys.argv[1]) * 2):
             for y in range(-1,int(sys.argv[1]) * 2):
+                color  = "blue" if color == "white" else "white"
 
                 picture.draw_filled_rectangle((self.width //int(sys.argv[1])) * x,(self.height // int(sys.argv[1])) * y,width//int(sys.argv[1]),height//int(sys.argv[1]))
 
-
-                picture.display()
-            picture.set_fill_color(red,green,blue)
-            picture.set_outline_color("black")
-            picture.set_pen_width(2)
-                # if x % 2 == 1:
-                #     picture.set_fill_color("red")
-            green = (green + 20) % 255
-            red = (red - 20) % 250
-
-
-        #picture.save_picture("recursive.png")
-
-        picture.draw_on_matrix()
-
+                picture.set_fill_color(color)
+                picture.set_outline_color("black")
+                picture.set_pen_width(2)
+                #picture.display()
+                picture.draw_on_matrix(int(sys.argv[2]))
+                
+                
 if __name__ == "__main__":
-    width = 720
-    height = 720
+    width = int(sys.argv[3])
+    height = int(sys.argv[3])
     picture.new_picture(width, height)
     picture.set_fill_color("black")
     picture.draw_filled_rectangle(0,0,width,height)
     squares = MultiSquare(width,height)
 
     squares.drawSquare()
+
