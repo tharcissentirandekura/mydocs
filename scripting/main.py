@@ -2,7 +2,6 @@ import subprocess
 import os
 from time import sleep
 
-
 def search(path):
     paths = []
     for root,dirs,files in os.walk(path):
