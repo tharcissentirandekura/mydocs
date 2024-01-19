@@ -16,10 +16,10 @@ class MultiSquare:
         for x in range(-1,int(sys.argv[1]) * 2):
             for y in range(-1,int(sys.argv[1]) * 2):
 
-                picture.draw_filled_rectangle((self.width //int(sys.argv[1])) * x,(self.height // int(sys.argv[1])) * y,width//3,height//3)
-                print("Coordinates are :", (self.width //int(sys.argv[1])) * x)
+                picture.draw_filled_rectangle((self.width //int(sys.argv[1])) * x,(self.height // int(sys.argv[1])) * y,width//int(sys.argv[1]),height//int(sys.argv[1]))
+                # print("Coordinates are :", (self.width //int(sys.argv[1])) * x)
 
-
+                picture.display()
             picture.set_fill_color(red,green,blue)
             picture.set_outline_color("black")
             picture.set_pen_width(2)
@@ -28,7 +28,7 @@ class MultiSquare:
             green = (green + 20) % 255
             red = (red - 20) % 250
 
-        picture.save_picture("recursive.png")
+        # picture.save_picture("recursive.png")
 
 if __name__ == "__main__":
     width = 720
