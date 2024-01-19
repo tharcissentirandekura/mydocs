@@ -40,4 +40,5 @@ if __name__ == "__main__":
 
 
     picture.draw_image(0,0,copied)  
-    picture.save_picture("copy.png")
+    #picture.save_picture("copy.png")
+    picture.display()
