@@ -201,6 +201,7 @@ def new_picture(width, height):
     
 def draw_on_matrix(time):
     #while True:
+    matrix.SetImage(IMAGE,0,0)
     while time > 0:
         matrix.SetImage(IMAGE,0,0)
         time -= 1

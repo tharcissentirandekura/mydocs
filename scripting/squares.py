@@ -20,7 +20,8 @@ class MultiSquare:
             for y in range(-1,int(sys.argv[1]) * 2):
                 color  = "blue" if color == "white" else "white"
 
-                picture.draw_filled_rectangle((self.width //int(sys.argv[1])) * x,(self.height // int(sys.argv[1])) * y,width//int(sys.argv[1]),height//int(sys.argv[1]))
+                #picture.draw_filled_rectangle((self.width //int(sys.argv[1])) * (x),(self.height // int(sys.argv[1])) * y,width//int(sys.argv[1]),height//int(sys.argv[1]))
+                picture.draw_filled_rectangle(x * 10,y*10,width//int(sys.argv[1]),height//int(sys.argv[1]))
 
                 picture.set_fill_color(color)
                 picture.set_outline_color("black")
