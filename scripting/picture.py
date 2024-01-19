@@ -57,6 +57,7 @@ import tkinter
 import time
 
 from PIL import Image, ImageColor, ImageDraw, ImageFont, ImageTk
+from rgbmatrix import RGBMatrix, RGBMatrixOptions
 
 __all__ = [
     "blank_image",
@@ -150,7 +151,7 @@ CANVAS = None
 IMAGE = None
 DRAW = None
 TK_IMAGE = None
-
+matrix = None
 
 OUTLINE_COLOR = parse_color("black")
 FILL_COLOR = parse_color("white")
@@ -170,6 +171,13 @@ def new_picture(width, height):
     """
     global ROOT, FRAME, CANVAS, IMAGE, DRAW, matrix
     
+    options = RGBMatrixOptions() #update 
+    options.rows = 64
+    options.cols = 64
+    options.chain_length = 1
+    options.parallel = 1
+    options.hardware_mapping = 'adafruit-hat'
+    
 
     if ROOT is None:
         ROOT = tkinter.Tk()
@@ -188,7 +196,14 @@ def new_picture(width, height):
     
     IMAGE = Image.new("RGB", (width, height), color=(255, 255, 255))
     DRAW = ImageDraw.Draw(IMAGE)
-
+    matrix = RGBMatrix(options = options)
+    
+    
+def draw_on_matrix(time):
+    #while True:
+    while time > 0:
+        matrix.SetImage(IMAGE,0,0)
+        time -= 1
 
 def save_picture(path):
     """
