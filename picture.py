@@ -199,10 +199,12 @@ def new_picture(width, height):
     matrix = RGBMatrix(options = options)
     
     
-def draw_on_matrix():
-    while True:
+def draw_on_matrix(time):
+    #while True:
+    matrix.SetImage(IMAGE,0,0)
+    while time > 0:
         matrix.SetImage(IMAGE,0,0)
-
+        time -= 1
 
 def save_picture(path):
     """
