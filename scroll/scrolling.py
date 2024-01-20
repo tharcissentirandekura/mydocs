@@ -41,3 +41,4 @@ dimension = int(sys.argv[1])
 color = sys.argv[2]
 background(dimension,dimension,color = 'black')
 run(dimension,dimension)
+
