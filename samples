@@ -1,8 +1,0 @@
-import picture
-
-picture.new_picture(64,64)
-
-picture.set_fill_color("red")
-picture.draw_rectangle(10,10,20,30)
-
-picture.run()
