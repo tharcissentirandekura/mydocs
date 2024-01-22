@@ -1,6 +1,7 @@
 import subprocess
 def git_save():
     try:
+        subprocess.check_call(["git", "--help"])
         subprocess.check_call(["git", "add", "."])
         subprocess.check_call(["git", "commit", "-m", "save the changes"])
         subprocess.check_call(["git", "push"])
