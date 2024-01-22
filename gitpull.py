@@ -7,7 +7,8 @@ def git_save():
         print("pushed successfully successful.")
     except subprocess.CalledProcessError as e:
         print(f"Action failed. Error: {e}")
-# Call the function to perform the git pull
-name = git_save()
-print(name)
+        
+git_save()
+
+
 
