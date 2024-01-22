@@ -25,7 +25,7 @@ class MultiSquare:
                 picture.set_fill_color(color)
                 picture.set_outline_color("black")
                 picture.set_pen_width(2)
-                #picture.display()
+                # picture.display(int(sys.argv[2]))
                 picture.draw_on_matrix(int(sys.argv[2]))
                 
                 
