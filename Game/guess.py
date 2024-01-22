@@ -27,22 +27,22 @@ class GuessColor:
         
         for i in range(1,60,3):
             color = "red" if color == "black" else "black"
-            x = random.randint(100,800)
-            y = random.randint(100,800)
-            # print(x,y)
+            # x = random.randint(100,800)
+            # y = random.randint(100,800)
+
             set_fill_color(color)
             draw_filled_circle(x,y,50)
             positions.append((x,y))
             display()
-            sleep(1)
+            # sleep(1)
 
-            GuessColor(self.width,self.height).background_color()
-            set_fill_color('green')
-            draw_filled_circle(x,y,50)
-            display()
-            sleep(1)
-            set_fill_color('white')
-            draw_filled_circle(x,y,50)
+            # GuessColor(self.width,self.height).background_color()
+            # set_fill_color('green')
+            # draw_filled_circle(x,y,50)
+            # display()
+            # sleep(1)
+            # set_fill_color('white')
+            # draw_filled_circle(x,y,50)
             
             
             
