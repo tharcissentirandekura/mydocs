@@ -4,7 +4,7 @@
 # function near the bottom of the file, then define the copy(), grayscale(), 
 # and vertflip() functions below to get the program working.
 
-import picture
+import image.picture2 as picture2
 
 def copy(image):
     """
@@ -17,10 +17,10 @@ def copy(image):
         imagecopy: a new image that is a copy of the inputed image.
     """
     # Get the image dimensions
-    width = picture.image_width(image)
-    height = picture.image_height(image)
+    width = picture2.image_width(image)
+    height = picture2.image_height(image)
     # Create a blank image to hold our copied pixel values
-    imagecopy = picture.blank_image(width, height)
+    imagecopy = picture2.blank_image(width, height)
     
     # Copy all the pixel values from image to imagecopy
     
@@ -33,13 +33,13 @@ def copy(image):
     # REPLACE THIS COMMENT WITH YOUR OWN CODE
     for x in range(width):
         for y in range(height):
-            red = picture.get_red(image,x,y)
-            green = picture.get_green(image,x,y)
-            blue = picture.get_blue(image,x,y)
+            red = picture2.get_red(image,x,y)
+            green = picture2.get_green(image,x,y)
+            blue = picture2.get_blue(image,x,y)
 
-            picture.set_blue(imagecopy,x,y,blue)
-            picture.set_green(imagecopy,x,y,green)
-            picture.set_red(imagecopy,x,y,red)
+            picture2.set_blue(imagecopy,x,y,blue)
+            picture2.set_green(imagecopy,x,y,green)
+            picture2.set_red(imagecopy,x,y,red)
 
     
     
@@ -82,15 +82,15 @@ def grayscale(image, width, height):
     for x in range(width):
         for  y in range(height):
        
-            red_new = picture.get_red(image,x,y)
-            green_new = picture.get_green(image,x,y)
-            blue_new = picture.get_blue(image,x,y)
+            red_new = picture2.get_red(image,x,y)
+            green_new = picture2.get_green(image,x,y)
+            blue_new = picture2.get_blue(image,x,y)
 
             comb_color = (red_new+green_new+blue_new)//3
 
-            picture.set_blue(imagecopy,x,y,comb_color)
-            picture.set_red(imagecopy,x,y,comb_color)
-            picture.set_green(imagecopy,x,y,comb_color)
+            picture2.set_blue(imagecopy,x,y,comb_color)
+            picture2.set_red(imagecopy,x,y,comb_color)
+            picture2.set_green(imagecopy,x,y,comb_color)
 
     return imagecopy
 
@@ -121,15 +121,15 @@ def vertflip(image, width, height):
     # REPLACE THIS COMMENT WITH YOUR OWN CODE
     for x in range(width):
         for y in range(height):
-            red = picture.get_red(image,x,y)
-            green = picture.get_green(image,x,y)
-            blue = picture.get_blue(image,x,y)
+            red = picture2.get_red(image,x,y)
+            green = picture2.get_green(image,x,y)
+            blue = picture2.get_blue(image,x,y)
 
             new_y_value = height - y -1
 
-            picture.set_blue(imagecopy,x,new_y_value,blue)
-            picture.set_green(imagecopy,x,new_y_value,green)
-            picture.set_red(imagecopy,x,new_y_value,red)
+            picture2.set_blue(imagecopy,x,new_y_value,blue)
+            picture2.set_green(imagecopy,x,new_y_value,green)
+            picture2.set_red(imagecopy,x,new_y_value,red)
 
 
     return imagecopy
@@ -146,14 +146,14 @@ def main():
     # Let's begin by loading a JPEG image into memory using the picture module.
     # This will only load the image, we will display it later using a separate 
     # function.
-    image = picture.load_image("image.png")
+    image = picture2.load_image("image.png")
 
     # The picture module allows us to determine the width and height of the 
     # image. We will need these dimensions so that we can loop through every 
     # pixel and perform some filtering operation. We will also use the 
     # dimensions later to draw the image on a canvas for display.
-    width = picture.image_width(image)
-    height = picture.image_height(image)
+    width = picture2.image_width(image)
+    height = picture2.image_height(image)
 
     # Here is where we'll call our filtering functions. Neither function is 
     # defined at the moment, so the image gets returned without any changes. 
@@ -166,11 +166,11 @@ def main():
     
     # To display the final image, we must first create a canvas of the same 
     # size. We can then draw the image on this blank canvas.
-    picture.new_picture(width, height)
+    picture2.new_picture(width, height)
 
-    picture.draw_image(0,0,gray_img)
+    picture2.draw_image(0,0,gray_img)
     
-    picture.save_picture("new_copy.png")
+    picture2.save_picture("new_copy.png")
 
 
 # The following line tells Python to execute the main() function when the 
