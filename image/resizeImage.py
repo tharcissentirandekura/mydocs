@@ -38,6 +38,5 @@ if __name__ == "__main__":
     picture2.new_picture(width,height)
 
 
-
     picture2.draw_image(0,0,copied)  
     picture2.save_picture("copy.png")
